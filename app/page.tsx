@@ -1,6 +1,33 @@
 import Link from "next/link";
 import { itineraries } from "@/content/itineraries";
 
+const features = [
+  {
+    href: "/itineraries",
+    emoji: "🧭",
+    title: "Follow a ready route",
+    text: "Tell it how many days you have — get a day-by-day plan with buses, prices and food already sorted.",
+  },
+  {
+    href: "/explore",
+    emoji: "🗺️",
+    title: "Open the map",
+    text: "40 hand-picked spots on one map. Tap a pin, read why it's special, get directions.",
+  },
+  {
+    href: "/chat",
+    emoji: "💬",
+    title: "Ask the guide",
+    text: "“I'm in Berat and hungry” — the AI knows every place here and answers instantly.",
+  },
+  {
+    href: "/guide",
+    emoji: "🚐",
+    title: "Learn the basics",
+    text: "Money, minibuses, SIM cards, safety, and 20 Albanian phrases that open doors.",
+  },
+];
+
 export default function Home() {
   return (
     <div>
@@ -18,15 +45,13 @@ export default function Home() {
             Made for Miro, with love
           </p>
           <h1 className="text-4xl sm:text-6xl font-semibold leading-tight max-w-3xl">
-            Miro — this is not a tourist guide to{" "}
+            Miro — this is your{" "}
             <span style={{ color: "#e8604f" }}>Albania</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-paper/80 leading-relaxed">
-            No top-10 lists, no bus-tour traps, no Ksamil sunbeds. Just the
-            places where Albanians actually eat, walk, swim and drink coffee —
-            researched, current, and honest about what&apos;s worth your time.
-            Built for you by your friend, so you fall for this country the way
-            it deserves.
+            No tourist traps. Just the real places — where Albanians eat, swim,
+            hike and drink coffee — with a plan for your days and a guide you
+            can ask anything, any time.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -39,78 +64,53 @@ export default function Home() {
               href="/chat"
               className="rounded-full border border-paper/30 px-6 py-3 font-medium hover:bg-paper/10 transition-colors"
             >
-              💬 Ask the guide anything
+              💬 Ask the guide
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Trip length picker */}
-      <section id="days" className="mx-auto max-w-6xl px-4 py-14">
-        <h2 className="text-3xl font-semibold">How many days do you have?</h2>
-        <p className="mt-2 text-ink-soft max-w-2xl">
-          Pick your window and get a real, day-by-day route — with the furgon
-          logistics, the food stops, and the timing tricks already worked out.
-        </p>
-        <div className="mt-8 grid gap-5 sm:grid-cols-3">
-          {itineraries.map((it) => (
+      {/* What you can do here */}
+      <section className="mx-auto max-w-6xl px-4 py-14">
+        <h2 className="text-3xl font-semibold">What can you do here?</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f) => (
             <Link
-              key={it.slug}
-              href={`/itineraries/${it.slug}`}
-              className="group rounded-2xl border border-line bg-white p-6 hover:border-sea hover:shadow-lg hover:shadow-sea/10 transition-all"
+              key={f.href}
+              href={f.href}
+              className="rounded-2xl bg-white border border-line p-5 hover:shadow-lg hover:border-sea transition-all"
             >
-              <div className="display text-3xl font-semibold text-sea group-hover:text-sea-deep">
-                {it.days}
-              </div>
-              <div className="mt-2 font-medium text-lg">{it.title}</div>
-              <p className="mt-2 text-sm text-ink-soft leading-relaxed">
-                {it.tagline}
+              <div className="text-2xl">{f.emoji}</div>
+              <h3 className="mt-2 font-semibold text-lg">{f.title}</h3>
+              <p className="mt-1 text-sm text-ink-soft leading-relaxed">
+                {f.text}
               </p>
-              <div className="mt-4 text-sm font-medium text-red">
-                See the route →
-              </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Quick links */}
-      <section className="bg-sand/60 border-y border-line">
-        <div className="mx-auto max-w-6xl px-4 py-14 grid gap-6 sm:grid-cols-3">
-          <Link
-            href="/explore"
-            className="rounded-2xl bg-white border border-line p-6 hover:shadow-lg transition-shadow"
-          >
-            <div className="text-2xl">🗺️</div>
-            <h3 className="mt-2 text-xl font-semibold">The map</h3>
-            <p className="mt-1 text-sm text-ink-soft">
-              Every curated spot on one map — filter by food, nature, history
-              or city life.
-            </p>
-          </Link>
-          <Link
-            href="/guide"
-            className="rounded-2xl bg-white border border-line p-6 hover:shadow-lg transition-shadow"
-          >
-            <div className="text-2xl">🚐</div>
-            <h3 className="mt-2 text-xl font-semibold">Survival guide</h3>
-            <p className="mt-1 text-sm text-ink-soft">
-              Furgons, lek, SIM cards, the famous head-nod reversal, 20
-              Albanian phrases, and the honest safety rundown.
-            </p>
-          </Link>
-          <Link
-            href="/chat"
-            className="rounded-2xl bg-white border border-line p-6 hover:shadow-lg transition-shadow"
-          >
-            <div className="text-2xl">💬</div>
-            <h3 className="mt-2 text-xl font-semibold">Your AI guide</h3>
-            <p className="mt-1 text-sm text-ink-soft">
-              &ldquo;I&apos;m in Gjirokastër and hungry&rdquo; — ask anything,
-              any time. It knows every place in this guide and the logistics
-              between them.
-            </p>
-          </Link>
+      {/* Trip length picker */}
+      <section id="days" className="bg-sand/60 border-y border-line">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-3xl font-semibold">How many days do you have?</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {itineraries.map((it) => (
+              <Link
+                key={it.slug}
+                href={`/itineraries/${it.slug}`}
+                className="group rounded-2xl border border-line bg-white p-6 hover:border-sea hover:shadow-lg transition-all"
+              >
+                <div className="display text-3xl font-semibold text-sea">
+                  {it.days}
+                </div>
+                <div className="mt-1 font-medium">{it.title}</div>
+                <div className="mt-3 text-sm font-medium text-red">
+                  See the route →
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
