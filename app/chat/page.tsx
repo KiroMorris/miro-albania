@@ -78,7 +78,7 @@ export default function ChatPage() {
         {messages.length === 0 && (
           <div className="pt-8 text-center">
             <div className="text-4xl">🇦🇱</div>
-            <h1 className="mt-3 text-2xl font-semibold">Ask your guide</h1>
+            <h1 className="mt-3 text-2xl font-semibold">Hey Miro — ask me anything</h1>
             <p className="mt-2 text-ink-soft max-w-md mx-auto">
               I know every place in this guide, the furgon logistics between
               them, and what&apos;s actually worth your time. Where are you,

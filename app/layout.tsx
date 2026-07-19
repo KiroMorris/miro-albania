@@ -16,9 +16,9 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Shqipëri — your Albania, off the tourist trail",
+  title: "Miro's Albania — off the tourist trail",
   description:
-    "A personal guide to really discovering Albania: real places, real food, real people. No tourist traps.",
+    "A personal guide made for Miro to really discover Albania: real places, real food, real people. No tourist traps.",
 };
 
 export const viewport: Viewport = {

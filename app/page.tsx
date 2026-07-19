@@ -15,18 +15,18 @@ export default function Home() {
         />
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-24">
           <p className="text-sm uppercase tracking-[0.25em] text-paper/60 mb-4">
-            A personal guide, made for you
+            Made for Miro, with love
           </p>
           <h1 className="text-4xl sm:text-6xl font-semibold leading-tight max-w-3xl">
-            This is not a tourist guide to{" "}
+            Miro — this is not a tourist guide to{" "}
             <span style={{ color: "#e8604f" }}>Albania</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-paper/80 leading-relaxed">
             No top-10 lists, no bus-tour traps, no Ksamil sunbeds. Just the
             places where Albanians actually eat, walk, swim and drink coffee —
             researched, current, and honest about what&apos;s worth your time.
-            Made with love by a friend who wants you to fall for this country
-            the way it deserves.
+            Built for you by your friend, so you fall for this country the way
+            it deserves.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -120,8 +120,8 @@ export default function Home() {
           &ldquo;The house belongs to God and the guest.&rdquo;
         </p>
         <p className="mt-3 text-ink-soft">
-          — the Albanian code of <em>besa</em>. You&apos;re about to be treated
-          better than you&apos;ve ever been treated as a traveler. Say
+          — the Albanian code of <em>besa</em>. Miro, you&apos;re about to be
+          treated better than you&apos;ve ever been treated as a traveler. Say
           faleminderit, accept the raki, and enjoy every minute. ❤️
         </p>
       </section>

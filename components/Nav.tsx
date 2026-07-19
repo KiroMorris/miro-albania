@@ -21,9 +21,9 @@ export default function Nav() {
     <header className="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line">
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
         <Link href="/" className="display text-xl font-semibold tracking-tight">
-          <span className="text-red">Shqipëri</span>
+          <span className="text-red">Miro&apos;s Albania</span>
           <span className="text-ink-soft text-sm ml-2 font-normal hidden sm:inline">
-            your Albania
+            shqipëria jote
           </span>
         </Link>
 
